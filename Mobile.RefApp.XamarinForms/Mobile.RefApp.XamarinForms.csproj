@@ -9,7 +9,7 @@
     <Folder Include="Mvvm\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
-    <PackageReference Include="Unity" Version="5.10.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.772" />
+    <PackageReference Include="Unity" Version="5.11.6" />
   </ItemGroup>
 </Project>

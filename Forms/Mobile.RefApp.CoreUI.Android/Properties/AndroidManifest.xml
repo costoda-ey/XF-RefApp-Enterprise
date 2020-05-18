@@ -11,7 +11,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<!-- Required for saving to the device. -->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-sdk android:minSdkVersion="26" android:targetSdkVersion="28" />
+	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="28" />
 	<application android:icon="@mipmap/icon" android:label="Xamarin Ref App" android:allowBackup="false">
 		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
