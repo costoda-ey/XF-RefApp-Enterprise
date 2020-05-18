@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.Views.InTuneLogsViewerView"
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:base="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+
+    Style="{StaticResource ContentPageStyle}"
+    ios:Page.UseSafeArea="true"
+    Visual="Material"
+    Title="{Binding Title}" >
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                Margin="0, 0, 0, 0" 
+                HasUnevenRows="true"
+                BackgroundColor="Black"
+                SeparatorColor="Transparent"
+                SelectionMode="None"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" 
+                ItemsSource="{Binding Logs}"
+                x:Name="lvLogs">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                       <ViewCell>
+                            <ViewCell.View>
+                                <Frame
+                                    Margin="4, 4, 4, 4"
+                                    Padding="12, 20, 12, 20"
+                                    BackgroundColor="{DynamicResource PageBackgroundColor}">    
+                                    <Grid RowSpacing="12" 
+                                          ColumnSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                            Grid.Column="0"
+                                            Grid.Row="0"
+                                            TextColor="White" 
+                                            Text="{Binding LogDateDisplay}"
+                                            Style="{DynamicResource ListItemTextStyle}"
+                                            Visual="Material">
+                                        </Label>
+                                        <Label 
+                                            Visual="Material"
+                                            Style="{DynamicResource ListItemTextStyle}"
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            TextColor="White" 
+                                            Text="{Binding Module}">
+                                        </Label>
+                                        <Label
+                                            Grid.Column="0"
+                                            Grid.Row="2"
+                                            TextColor="White" 
+                                            Text="{Binding Message}"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            Visual="Material">
+                                        </Label>
+                                    </Grid>
+                                </Frame> 
+                            </ViewCell.View>
+                       </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseContentPage>

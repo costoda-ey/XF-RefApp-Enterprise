@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<local:RefAppApplication
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.App"
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI">
+    <Application.Resources>
+         <ResourceDictionary>
+            <!-- Colors -->
+            <Color x:Key="NavigationBarBackgroundColor">#23282d</Color>
+            <Color x:Key="PageBackgroundColor">#4B4C4E</Color>
+            <Color x:Key="PrimaryTextColor">#4A4A4A</Color>
+            <Color x:Key="BackgroundColor">#23282d</Color>
+            <Color x:Key="DarkGrayBackground">#44494F</Color>
+            <Color x:Key="TextColor">White</Color>
+            <Color x:Key="ListSelectionColor">#E4EFFB</Color>
+            <!-- page style -->
+            <Style x:Key="ContentPageStyle" 
+                   TargetType="ContentPage" 
+                   ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="#4B4C4E" />  
+                <Setter Property="NavigationPage.BackButtonTitle" Value="" />
+            </Style>
+            <Style x:Key="ContentPageBlackStyle" 
+                   TargetType="ContentPage" 
+                   ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="Black" />  
+                <Setter Property="NavigationPage.BackButtonTitle" Value="" />
+            </Style>
+            
+            <Style x:Key="ContentPageMenu" 
+                   TargetType="ContentPage" 
+                   ApplyToDerivedTypes="true">
+                <Setter Property="BackgroundColor" Value="Black" />  
+                <Setter Property="NavigationPage.BackButtonTitle" Value="" />
+            </Style>
+            <!-- Nav bar Style -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationBarBackgroundColor}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+         </ResourceDictionary>
+    </Application.Resources>
+</local:RefAppApplication>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.Views.InTuneEnrollmentView"
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:base="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+
+    Style="{StaticResource ContentPageStyle}"
+    ios:Page.UseSafeArea="true"
+    Visual="Material"
+    Title="{Binding Title}" >
+    <ContentPage.Content>
+    <ScrollView>
+        <StackLayout Margin="16, 1, 16, 1">
+            <Label 
+                TextColor="{DynamicResource TextColor}" 
+                FontAttributes="Bold" 
+                Text="Select Endpoint Below" />
+            <Picker 
+                Margin="0, 8, 0, 0"
+                TextColor="White"
+                Title="Select Endpoint" 
+                ItemsSource="{Binding EndPoints}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedEndpoint}"
+                />
+            <Button
+                Margin="0, 8, 0, 2"
+                IsEnabled="true"
+                Command="{Binding LoginEnrollAccountCommand}"
+                Text="Login and Enroll">
+            </Button>
+             <Label
+                Style="{DynamicResource CaptionStyle}"
+                TextColor="{DynamicResource TextColor}"
+                Text="Login and Enroll will require you to login using your username and password and will save a token in cache.  Not recommended if you are using Broker." />
+            <Button
+                Margin="0, 15, 0, 2"
+                Command="{Binding IntuneEnrollAccountCommand}"
+                Text="Register and Enroll" />
+            <Label
+                Style="{DynamicResource CaptionStyle}"
+                TextColor="{DynamicResource TextColor}" 
+                Text="Register and Enroll will try to get an existing token from cache and use it to register.  Recommended experience for SSO/Broker." />
+            <Button
+                Margin="0, 15, 0, 2"
+                Command="{Binding DeregisterUnenrollCommand}"
+                Text="Unenroll and Deregister" />
+            <Label
+                Style="{DynamicResource CaptionStyle}"
+                TextColor="{DynamicResource TextColor}" 
+                Text="Completely log out and unenroll this account.  Use only if you have previously registered using one of the above options." />
+            <Label  
+                Text="Status" 
+                FontAttributes="Bold"
+                TextColor="{DynamicResource TextColor}" 
+                Margin="0, 16, 0, 0">        
+            </Label>
+            <Label  
+                Text="{Binding Status}" 
+                TextColor="{DynamicResource TextColor}" >      
+            </Label>
+            <Label  Text="Is Identity Managed" 
+                    FontAttributes="Bold"
+                    TextColor="{DynamicResource TextColor}" 
+                    Margin="0, 16, 0, 0">        
+            </Label>
+            <Label  Text="{Binding IsIdentityManaged}" 
+                    TextColor="{DynamicResource TextColor}" >
+            </Label>
+
+            <Label  Text="Enrolled Account" 
+                    FontAttributes="Bold"
+                    TextColor="{DynamicResource TextColor}" 
+                    Margin="0, 16, 0, 0">
+            </Label>
+            <Label  Text="{Binding EnrolledAccount}" 
+                    TextColor="{DynamicResource TextColor}">
+            </Label>
+        </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</base:BaseContentPage>

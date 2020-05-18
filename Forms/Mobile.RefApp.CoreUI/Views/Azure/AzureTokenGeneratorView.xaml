@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.Views.AzureTokenGeneratorView"
+
+    xmlns:controls="clr-namespace:Mobile.RefApp.CoreUI.Controls;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:base="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+     
+    Style="{StaticResource ContentPageStyle}"
+    ios:Page.UseSafeArea="true"
+    Title="{Binding Title}"
+    Visual="Material"
+    >
+    <ContentPage.Content>
+    <StackLayout>
+       <ActivityIndicator 
+            Color="Yellow" 
+            IsRunning="{Binding IsBusy}" /> 
+        <ScrollView>
+            <StackLayout 
+                Margin="16, 0, 16, 0">
+                <Label 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Select Endpoint Below" /> 
+                <Picker 
+                    Margin="0, 8, 0, 0"
+                    TextColor="White"
+                    Title="Select Endpoint"
+                    ItemsSource="{Binding EndPoints}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedEndpoint}"
+                    />
+                 <Button
+                    Margin="0, 8, 0, 0"
+                    IsEnabled="true"
+                    Command="{Binding GetTokenCommand}"
+                    Text="Get Token">
+                </Button>
+                <Button
+                    Margin="0, 15, 0, 0"
+                    Command="{Binding ViewTokenDetailsCommand}"
+                    Text="View Token Details" />
+                <Button
+                    Margin="0, 15, 0, 0"
+                    Command="{Binding ViewTokenRawCommand}"
+                    Text="View Token Raw" />
+                <Label 
+                    Margin="0, 10, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Status" /> 
+               <Label 
+                    Margin="0, 5, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    Text="{Binding Status}">
+                </Label> 
+               <StackLayout 
+                        Margin="0, 16, 0, 0"
+                    Orientation="Horizontal">
+                    <Label 
+                        VerticalOptions="Center"
+                        FontAttributes="Bold"
+                        Text="Use Broker"
+                        TextColor="White" />
+                    <Switch
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        IsToggled="{Binding UseBroker}" />
+                </StackLayout> 
+                <Label 
+                    Margin="0, 20, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Azure App(Client) ID"/>     
+                <Entry
+                    Visual="Default"
+                    Margin="5"
+                    x:Name="appId"
+                    Text="{Binding AppId}" 
+                    IsSpellCheckEnabled="False"
+                    IsTextPredictionEnabled="False"
+                    BackgroundColor="{DynamicResource TextColor}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Keyboard="Default">
+                   <Entry.Keyboard> 
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                   </Entry.Keyboard>
+                </Entry>
+                <Label 
+                    Margin="0, 20, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Authority (Tentant URI)"/> 
+                <Entry
+                    Visual="Default"
+                    Margin="5"
+                    x:Name="authority"
+                    Text="{Binding TentantUri}"  
+                    IsSpellCheckEnabled="False"
+                    IsTextPredictionEnabled="False"
+                    BackgroundColor="{DynamicResource TextColor}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Keyboard="Default">
+                   <Entry.Keyboard> 
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                   </Entry.Keyboard>
+                </Entry>
+                <Label 
+                    Margin="0, 20, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Resource (Audience)"/> 
+                <Entry
+                    Visual="Default"
+                    Margin="5"
+                    x:Name="audience"
+                    Text="{Binding Audience}"   
+                    IsSpellCheckEnabled="False"
+                    IsTextPredictionEnabled="False"
+                    BackgroundColor="{DynamicResource TextColor}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Keyboard="Default">
+                   <Entry.Keyboard> 
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                   </Entry.Keyboard>
+                </Entry>
+                <Label 
+                    Margin="0, 20, 0, 0" 
+                    TextColor="{DynamicResource TextColor}" 
+                    FontAttributes="Bold" 
+                    Text="Redirect URI"/> 
+                <Entry
+                    Visual="Default"
+                    Margin="5, 5, 5, 30"
+                    x:Name="redirectUri"
+                    Text="{Binding RedirectUri}"    
+                    IsSpellCheckEnabled="False"
+                    IsTextPredictionEnabled="False"
+                    BackgroundColor="{DynamicResource TextColor}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Keyboard="Default">
+                   <Entry.Keyboard> 
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeNone</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                   </Entry.Keyboard>
+                </Entry>
+    
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+    </ContentPage.Content>
+</base:BaseContentPage>

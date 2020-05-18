@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <LangVersion>7.1</LangVersion> 
+    <TargetFramework>netstandard2.0</TargetFramework>     
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ADAL\" />
+    <Folder Include="AppCenter\" />
+    <Folder Include="Intune\" />
+    <Folder Include="Keychain\" />
+    <Folder Include="Logging\" />
+    <Folder Include="Messenging\" />
+    <Folder Include="Nework\" />
+    <Folder Include="Core\" />
+    <Folder Include="ADAL\Constants\" />
+    <Folder Include="Intune\Constants\" />
+    <Folder Include="Intune\Enrollment\" />
+    <Folder Include="Intune\FileProtection\" />
+    <Folder Include="Intune\Policies\" />
+    <Folder Include="IO\" />
+    <Folder Include="Intune\Logging\" />
+    <Folder Include="Tasks\" />
+    <Folder Include="Security\" />
+    <Folder Include="Graph\" />
+    <Folder Include="Graph\Groups\" />
+    <Folder Include="Graph\OneDrive\" />
+    <Folder Include="Graph\User\" />
+    <Folder Include="Graph\Mailbox\" />
+    <Folder Include="SharePoint\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AppCenter" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Push" Version="2.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+  </ItemGroup>
+</Project>

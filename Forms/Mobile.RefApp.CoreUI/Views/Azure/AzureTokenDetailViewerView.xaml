@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.Views.AzureTokenDetailViewerView"
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:base="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+     
+    Style="{StaticResource ContentPageStyle}"
+    ios:Page.UseSafeArea="true"
+    Title="{Binding Title}"
+    Visual="Material"> 
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                Margin="0, 1, 0, 5" 
+                HasUnevenRows="true"
+                BackgroundColor="{DynamicResource PageBackgroundColor}"
+                SeparatorColor="Silver"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" 
+                ItemsSource="{Binding TokenDetails}"
+                x:Name="lvToken">
+                 <ListView.ItemTemplate>
+                    <DataTemplate>
+                       <ViewCell>
+                            <StackLayout Margin="0, 5, 0, 5" Orientation="Vertical" VerticalOptions="Fill">
+                                <Label Margin="16, 12, 16, 2" 
+                                       TextColor="{DynamicResource TextColor}" 
+                                       Text="{Binding Key}" FontSize="Medium" 
+                                       FontAttributes="Bold" 
+                                       LineBreakMode="WordWrap">
+                                </Label>
+                                <Label Margin="16, 2, 16, 8"  
+                                       TextColor="{DynamicResource TextColor}" 
+                                       Text="{Binding Value}" 
+                                       FontSize="Small" 
+                                       LineBreakMode="WordWrap">
+                                </Label>
+                            </StackLayout>
+                        </ViewCell> 
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView> 
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseContentPage>

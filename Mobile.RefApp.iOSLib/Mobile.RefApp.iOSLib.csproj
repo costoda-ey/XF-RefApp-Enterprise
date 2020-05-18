@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>7.1</LangVersion> 
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED66656D-FC30-4FA8-B7FE-548DE096D698}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{a52b8a63-bc84-4b47-910d-692533484892}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Mobile.RefApp.iOSLib</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Mobile.RefApp.iOSLib</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http" />
+    <!--     
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.0.5.1-internal15603iosBrokerLogs\lib\xamarinios10\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    -->
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Intune.MAM.Xamarin.iOS">
+      <Version>11.0.8</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <Version>5.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="ADAL\" />
+    <Folder Include="Network\" />
+    <Folder Include="Keychain\" />
+    <Folder Include="Intune\" />
+    <Folder Include="Intune\Config\" />
+    <Folder Include="Intune\Enrollment\" />
+    <Folder Include="Intune\FileProtection\" />
+    <Folder Include="Intune\Policies\" />
+    <Folder Include="IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ADAL\AzurePlatformParameters.cs" />
+    <Compile Include="Network\IosHttpClientHandler.cs" />
+    <Compile Include="Keychain\KeychainService.cs" />
+    <Compile Include="Intune\DiagnosticsService.cs" />
+    <Compile Include="Intune\IntuneService.cs" />
+    <Compile Include="Intune\Config\ConfigManagerService.cs" />
+    <Compile Include="Intune\Enrollment\EnrollmentService.cs" />
+    <Compile Include="Intune\FileProtection\FileProtectionManagerService.cs" />
+    <Compile Include="Intune\Policies\PolicyService.cs" />
+    <Compile Include="Intune\Policies\DocumentPickerMode.cs" />
+    <Compile Include="Network\NetworkInterfaceInfo.cs" />
+    <Compile Include="IO\FileSystemService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mobile.RefApp.Lib\Mobile.RefApp.Lib.csproj">
+      <Project>{5B5C8BB3-3829-4DC5-94C2-CF311873B10B}</Project>
+      <Name>Mobile.RefApp.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

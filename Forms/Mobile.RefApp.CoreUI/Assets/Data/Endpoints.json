@@ -1,0 +1,28 @@
+﻿[{
+    "useBroker":                true,
+    "platform":                 1,
+    "iOSKeychainSecurityGroup": "com.microsoft.adalcache",
+    "iOSTeamId":                "",
+    "applicationId":            "",
+    "authority":                "",
+    "redirectUri":              "",
+    "resourceId":               "",
+    "extraParameters":          "",
+    "environment":              2,
+    "name":                     "",
+    "isActive":                 true 
+},
+{
+    "useBroker":                true,
+    "platform":                 0,
+    "iOSKeychainSecurityGroup": "com.microsoft.adalcache",
+    "iOSTeamId":                "",
+    "applicationId":            "",
+    "authority":                "",
+    "redirectUri":              "",
+    "resourceId":               "",
+    "extraParameters":          "",
+    "environment":              2,
+    "name":                     "",
+    "isActive":                 true
+}]

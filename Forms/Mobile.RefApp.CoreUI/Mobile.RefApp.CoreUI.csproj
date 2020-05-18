@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion> 
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.1.0.618606" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Microsoft.AppCenter" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Distribute" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Push" Version="2.1.1" />
+    <PackageReference Include="Unity" Version="5.10.3" />
+    <PackageReference Include="Unity.Container" Version="5.10.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Models\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Constants\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Base\" />
+    <Folder Include="Messeging\" />
+    <Folder Include="Factories\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Images\" />
+    <Folder Include="ViewModels\Azure\" />
+    <Folder Include="Views\Azure\" />
+    <Folder Include="ViewModels\Network\" />
+    <Folder Include="Views\Network\" />
+    <Folder Include="ViewModels\InTune\" />
+    <Folder Include="Views\InTune\" />
+    <Folder Include="Assets\Data\" />
+    <Folder Include="Controls\" />
+    <Folder Include="ViewModels\Keychain\" />
+    <Folder Include="Views\Keychain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Images\camera-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\token-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\tokencache-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\keychain-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\diagnostics-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\logs-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\networkconnection-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\networktools-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\sharepointexplorer-2000-1200.png" />
+    <EmbeddedResource Include="Assets\Images\sharepoint-2000-1000.png" />
+    <EmbeddedResource Include="Assets\Data\Endpoints.json" />
+    <EmbeddedResource Include="Assets\Data\Sharepoint.json" />
+    <EmbeddedResource Include="Assets\Images\intune-enrollment-2000-1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\Images\camera-2000-1200.png" />
+    <None Remove="Assets\Images\token-2000-1200.png" />
+    <None Remove="Assets\Images\tokencache-2000-1200.png" />
+    <None Remove="Assets\Images\keychain-2000-1200.png" />
+    <None Remove="Assets\Images\diagnostics-2000-1200.png" />
+    <None Remove="Assets\Images\logs-2000-1200.png" />
+    <None Remove="Assets\Images\networkconnection-2000-1200.png" />
+    <None Remove="Assets\Images\networktools-2000-1200.png" />
+    <None Remove="Assets\Images\sharepointexplorer-2000-1200.png" />
+    <None Remove="Assets\Images\sharepoint-2000-1000.png" />
+    <None Remove="Assets\Data\Endpoints.json" />
+    <None Remove="Assets\Data\Sharepoint.json" />
+    <None Remove="Assets\Images\intune-enrollment-2000-1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Mobile.RefApp.Lib\Mobile.RefApp.Lib.csproj" />
+    <ProjectReference Include="..\..\Mobile.RefApp.XamarinForms\Mobile.RefApp.XamarinForms.csproj" />
+  </ItemGroup>
+</Project>

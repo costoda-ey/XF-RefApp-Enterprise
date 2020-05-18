@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Mobile.RefApp.CoreUI.Views.RootView"
+
+    xmlns:local="clr-namespace:Mobile.RefApp.CoreUI;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:base="clr-namespace:Mobile.RefApp.CoreUI.Base;assembly=Mobile.RefApp.CoreUI" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+
+    Style="{StaticResource ContentPageStyle}"
+    ios:Page.UseSafeArea="true"
+    Title="{Binding Title}" >
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                x:Name="lvMenuItems"
+                HasUnevenRows="true"
+                BackgroundColor="Black"
+                SeparatorColor="Transparent"
+                SelectionMode="None"
+                ItemsSource="{Binding MenuItems}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                ItemTapped="OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame 
+                                    Padding="0"
+                                    Margin="16, 20, 16, 20"
+                                    BackgroundColor="{DynamicResource PageBackgroundColor}">
+                                    <Grid RowSpacing="12" 
+                                          ColumnSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image  
+                                            Aspect="AspectFill"
+                                            HeightRequest="200"
+                                            MinimumHeightRequest="200"
+                                            Grid.Row="0" 
+                                            Grid.Column="0"
+                                            Source="{Binding LogoSource}"></Image>
+                                        <Label
+                                            Visual="Material"
+                                            Style="{DynamicResource TitleStyle}"
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            Margin="16, 0, 16, 0"
+                                            TextColor="White" 
+                                            Text="{Binding DisplayName}">
+                                        </Label>
+                                        <Label 
+                                            Visual="Material"
+                                            Style="{DynamicResource ListItemDetailTextStyle}"
+                                            Grid.Column="0"
+                                            Grid.Row="2"
+                                            Margin="16, 0, 16, 16"
+                                            TextColor="White" 
+                                            Text="{Binding Description}">
+                                        </Label>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</base:BaseContentPage>
